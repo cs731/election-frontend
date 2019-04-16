@@ -1,0 +1,27 @@
+mat-card {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    overflow: auto;
+}
+
+.candids {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .candid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+            max-width: 150px;
+        }
+    }
+}

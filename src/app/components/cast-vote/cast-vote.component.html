@@ -1,0 +1,63 @@
+<div class="wrapper">
+  <mat-card *ngIf="step===0">
+    <h1>Welcome!</h1>
+    <div class="input">
+      <h3>Please enter your User-ID and Password that you received from Trusted Organization</h3>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userid" placeholder="User-ID">
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input matInput [(ngModel)]="password" placeholder="Password" type="password">
+      </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="takeUandP()">I'm ready to vote</button>
+  </mat-card>
+
+  <mat-card *ngIf="step===1">
+    <div class="input">
+      <h3>Select candidates who you wish to vote for</h3>
+      <h4>Competing for Post-1 are</h4>
+      <div class="candids">
+        <div class="candid">
+          <img src="assets/p1.jpg" alt="">
+          <h5>Candid-1</h5>
+        </div>
+        <div class="candid">
+          <img src="assets/p1.jpg" alt="">
+          <h5>Candid-2</h5>
+        </div>
+      </div>
+      <mat-radio-group [(ngModel)]="opt1">
+        <mat-radio-button class="example-radio-button" [value]="'a'">
+          Candid-1
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button" [value]="'b'">
+          Candid-2
+        </mat-radio-button>
+      </mat-radio-group>
+      <mat-divider></mat-divider>
+
+      <h4>Competing for Post-2 are</h4>
+      <div class="candids">
+        <div class="candid">
+          <img src="assets/p1.jpg" alt="">
+          <h5>Candid-3</h5>
+        </div>
+        <div class="candid">
+          <img src="assets/p1.jpg" alt="">
+          <h5>Candid-4</h5>
+        </div>
+      </div>
+      <mat-radio-group [(ngModel)]="opt2">
+        <mat-radio-button class="example-radio-button" [value]="'a'">
+          Candid-3
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button" [value]="'b'">
+          Candid-4
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <button mat-raised-button (click)="castVote()">Cast my vote</button>
+  </mat-card>
+</div>
